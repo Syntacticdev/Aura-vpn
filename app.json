@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "aura_vpn",
+    "name": "Aura VPN",
     "slug": "aura_vpn",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,10 +20,17 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
+      "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-image",
+        {
+          "disableLibdav1d": true
+        }
+      ],
       "expo-router",
       [
         "expo-splash-screen",
@@ -32,7 +39,9 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "expo-font",
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,
