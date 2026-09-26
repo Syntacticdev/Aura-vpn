@@ -11,7 +11,7 @@ const ServerCard = () => {
     return (
         <View className=' shadow-card-lg flex-row items-center w-full bg-white rounded-2xl p-4 android:elevation   gap-6'>
             <View className='bg-surface-dim rounded-full justify-center items-center h-12 w-12 '>
-                <EImage placeholder={{ blurhash }} contentFit='cover' style={{ width: '60%', height: '60%', borderRadius: 100 }} source={require("@/assets/images/flags/gm.svg")} />
+                <EImage placeholder={{ blurhash }} contentFit='cover' style={{ width: '80%', height: '80%', borderRadius: 100 }} source={require("@/assets/images/flags/gm.svg")} />
             </View>
 
             <View className='w-[55%]'>
@@ -29,7 +29,6 @@ const ServerCard = () => {
             <View className='flex-row items-end gap-2 '>
                 <Text className='text-lg font-jetbrainsMono-bold  '>12ms</Text>
                 <VPNNetworkBar level={4} />
-
             </View>
         </View>
     )

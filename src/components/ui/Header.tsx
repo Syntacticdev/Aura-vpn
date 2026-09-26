@@ -15,9 +15,9 @@ const Header = () => {
             </View>
 
             <Pressable>
-                <View className='w-10 h-10 bg-surface-dim ring-2 border border-2 border-surface-dim rounded-full items-center justify-center overflow-hidden'>
+                <View className='w-10 h-10 border border-2 border-muted rounded-full items-center justify-center overflow-hidden'>
 
-                    <Image resizeMode='contain' source={user} className='w-10 h-10 bg-surface-dim' />
+                    <Image resizeMode='contain' source={user} className='w-10 h-10 ' />
                 </View>
             </Pressable>
         </View>
