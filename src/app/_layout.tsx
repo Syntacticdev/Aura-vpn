@@ -6,6 +6,7 @@ import { JetBrainsMono_300Light, JetBrainsMono_400Regular, JetBrainsMono_500Medi
 import React, { useEffect } from "react";
 import "@/global.css"
 import { StatusBar, View } from "react-native";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 
 
 export default function RootLayout() {
@@ -32,15 +33,18 @@ export default function RootLayout() {
   if (!loaded || error) return null
 
   return (
-    <React.Fragment>
-      <StatusBar barStyle={"dark-content"} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="(tab)" />
-      </Stack>
-    </React.Fragment>
+    <KeyboardProvider>
+      <React.Fragment>
+        <StatusBar barStyle={"dark-content"} />
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="(public)" />
+          <Stack.Screen name="(app)" />
+        </Stack>
+      </React.Fragment>
+    </KeyboardProvider>
   );
 }

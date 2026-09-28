@@ -134,8 +134,8 @@ const Analytics = () => {
           </View>
         </View>
 
-        <View className='shadow-card android:elevation-md bg-white rounded-2xl p-4'>
-          <View className='flex-row mt-6 justify-between items-center '>
+        <View className='shadow-card mt-6 android:elevation-md bg-white rounded-2xl p-4'>
+          <View className='flex-row  justify-between items-center '>
             <View className='flex-row gap-2 items-center'>
               <ShieldCheck />
               <Text className='text-sm font-hanken-semibold'>INTEGRITY AUDIT</Text>
@@ -217,7 +217,7 @@ const Analytics = () => {
             <View className='items-center bg-muted p-4 w-[32%] h-46'>
               <TriangleAlert size={36} color={"red"} />
               <Text className='font-hanken-bold text-lg'>12</Text>
-              <Text className='text-xs text-center'>BAD DOMAINS</Text>
+              <Text className='text-xs'>BAD DOMAINS</Text>
             </View>
           </View>
         </View>
