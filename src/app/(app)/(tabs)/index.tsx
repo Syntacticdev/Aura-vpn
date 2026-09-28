@@ -1,18 +1,66 @@
 import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SafeAreaWrapper from '@/components/ui/Safe-area-wrapper'
-import { ArrowDown, ArrowUp, Power, RotateCcwClock, ShieldKeyhole, SlidersHorizontal } from "lucide-react-native"
+import { ArrowDown, ArrowUp, ChevronRight, Hourglass, Power, RotateCcwClock, ShieldKeyhole, SlidersHorizontal } from "lucide-react-native"
 import { Host, Switch, Box } from '@expo/ui/jetpack-compose';
 import { size, clip, background, Shapes } from '@expo/ui/jetpack-compose/modifiers';
 import { Image as EImage } from "expo-image"
 import Header from '@/components/ui/Header';
+import { cn } from '@/lib/utils';
+import Dot from '@/components/ui/Dot';
+import { router } from 'expo-router';
 const Connect = () => {
+  const [connected, setConnected] = useState(false)
+  const [connecting, setConnecting] = useState(false)
   const [checked, setChecked] = useState(false);
+  const [connectedSeconds, setConnectedSeconds] = useState(0)
 
+  useEffect(() => {
+    if (!connecting) return
 
+    const timer = setTimeout(() => {
+      setConnecting(false)
+      setConnected(true)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [connecting])
+
+  useEffect(() => {
+    if (!connected) {
+      setConnectedSeconds(0)
+      return
+    }
+
+    const connectedAt = Date.now()
+    const updateDuration = () => {
+      setConnectedSeconds(Math.floor((Date.now() - connectedAt) / 1000))
+    }
+
+    updateDuration()
+    const interval = setInterval(updateDuration, 1000)
+
+    return () => clearInterval(interval)
+  }, [connected])
+
+  const simulateConnecting = () => {
+    if (connected || connecting) return
+    setConnecting(true)
+  }
+
+  const disconnect = () => {
+    setConnected(false)
+    setConnecting(false)
+  }
 
   const blurhash =
     '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+  const hours = Math.floor(connectedSeconds / 3600)
+  const minutes = Math.floor((connectedSeconds % 3600) / 60)
+  const seconds = connectedSeconds % 60
+  const formattedDuration = [hours, minutes, seconds]
+    .map((value) => String(value).padStart(2, '0'))
+    .join(':')
 
   return (
     <SafeAreaWrapper edges={["top"]}>
@@ -23,67 +71,119 @@ const Connect = () => {
 
         <View className="flex-row items-center self-center my-6 bg-primary-fixed gap-2 px-4 py-2 rounded-full ">
           <View className=" bg-tertiary-fixed-variant  w-2 h-2 rounded-full " />
-          <Text className='font-hanken-semibold text-tertiary-fixed-variant '>UNPROTECTED</Text>
+          <Text className='font-hanken-semibold text-tertiary-fixed-variant '>{connected ? "ENCRYPTED TUNNEL" : "UNPROTECTED"}</Text>
         </View>
 
-        <View className=' justify-center items-center '>
-          <Text className='text-3xl  font-hanken-bold  '>Not Connected</Text>
+        {!connected ? <View className=' justify-center items-center '>
+          <Text className='text-2xl  font-hanken-bold  '> Not Connected</Text>
           <Text className='text-md font-hanken '>Your actual IP and traffic are visible to your ISP</Text>
-        </View>
+        </View> : <Text className='text-2xl text-center  font-hanken-bold  '> PROTECTED & ENCRYPTED</Text>
+        }
 
 
-        <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 px-4 py-3 rounded-full ">
-          <View className="flex-row items-center self-center  bg-primary-fixed gap-2 rounded-md p-1 ">
-            <Text className='text-sm'>EXPOSED</Text>
+        {connected ?
+          <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 px-4 py-3 rounded-full ">
+            <Text className=' font-jetbrainsMono-semibold text-black text-sm '>84.115.18.24</Text>
+            <View className=" bg-surface-variant w-1 h-1 rounded-sm " />
+            <Text className='text-sm'>Frankfurt, DE</Text>
+          </View> :
+          <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 px-4 py-3 rounded-full ">
+            <View className="flex-row items-center self-center  bg-primary-fixed gap-2 rounded-md p-1 ">
+              <Text className='text-sm'>EXPOSED</Text>
+            </View>
+            <Text className=' font-jetbrainsMono-semibold text-black text-sm '>84.115.18.24</Text>
+            <View className=" bg-surface-variant w-1 h-1 rounded-sm " />
+            <Text className='text-sm'>Berlin, DE</Text>
           </View>
-          <Text className=' font-jetbrainsMono-semibold text-black text-sm '>84.115.18.24</Text>
-          <View className=" bg-surface-variant w-1 h-1 rounded-sm " />
-          <Text className='text-sm'>Berlin, DE</Text>
-        </View>
+        }
 
 
-        <View className='bg-surface-dim w-56 h-56 justify-center items-center rounded-full self-center  '>
-          <View className='bg-white w-4/5 h-4/5 rounded-full justify-center items-center '>
-            <View className='bg-surface-dim justify-center items-center gap-2 h-4/5 w-4/5 rounded-full '>
-              <Power />
-              <Text className='text-center text-sm font-jetbrainsMono-medium '>QUICK CONNECT</Text>
+        <Pressable onPress={connected || connecting ? disconnect : simulateConnecting}>
+          <View className='bg-surface-dim w-56 h-56 justify-center items-center rounded-full self-center  '>
+            <View className='bg-white w-4/5 h-4/5 rounded-full justify-center items-center '>
+              <View className={cn("justify-center items-center gap-2 h-4/5 w-4/5 rounded-full",
+                connected ? "bg-black" : "bg-surface-dim "
+              )}>
+                <Power color={connected ? "#fff" : "#000"} />
+                <Text className={cn('text-center text-sm font-jetbrainsMono-medium ',
+                  connected ? "text-white" : "text-black"
+                )}>
+                  {connecting ? "Connecting" : connected ? "CONNECTED" : "QUICK CONNECT"}
+                </Text>
+              </View>
             </View>
           </View>
-        </View>
+        </Pressable>
 
-        <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 py-2 px-8 rounded-full ">
-          <RotateCcwClock />
-          <Text className=' font-jetbrainsMono-semibold text-black text-sm '>LAST SESSION:</Text>
-          <Text className='text-sm font-hanken '>42m ago</Text>
-        </View>
+        {!connected ?
+          <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 py-2 px-8 rounded-full ">
+            <RotateCcwClock />
+            <Text className=' font-jetbrainsMono-semibold text-black text-sm '>LAST SESSION:</Text>
+            <Text className='text-sm font-hanken '>42m ago</Text>
+          </View> :
+          <View className="flex-row items-center justify-center self-center my-6 bg-surface-dim gap-2 py-2 px-8 rounded-full ">
+            <Hourglass />
+            <Text className=' font-jetbrainsMono-semibold text-black font-jetbrainsMono-bold text-lg '>{formattedDuration}</Text>
+          </View>
+        }
 
-        <View className='flex-1 flex-row justify-between mx-2 my-6 bg-white p-4 rounded-md  shadow-xs '>
-          <View className='justify-center items-center '>
-            <Text className='font-jetbrainsMono-semibold'>LATENCY</Text>
-            <View className='flex-row gap-1  '>
-              <Text className=' font-jetbrainsMono-medium  '>--</Text>
-              <Text className=' font-jetbrainsMono-medium  '>ms</Text>
+        {
+          !connected ?
+            <View className='flex-1 flex-row justify-between mx-2 my-6 bg-white p-4 rounded-md  shadow-xs '>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold'>LATENCY</Text>
+                <View className='flex-row gap-1  '>
+                  <Text className=' font-jetbrainsMono-medium  '>--</Text>
+                  <Text className=' font-jetbrainsMono-medium  '>ms</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>DOWN</Text>
+                <View className='flex-row justify-center items-center gap-1  '>
+                  <ArrowDown size={16} />
+                  <Text className=' font-jetbrainsMono-medium  '>0.0M</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>UP</Text>
+                <View className='flex-row gap-1  '>
+                  <ArrowUp size={16} />
+                  <Text className=' font-jetbrainsMono-medium  '>0.0M</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>PROTOCOL</Text>
+                <Text className=' bg-surface-dim py-1 px-2 text-sm rounded-full '>STANDBY</Text>
+              </View>
+            </View> : <View className='flex-1 flex-row justify-between mx-2 my-6 bg-white p-4 rounded-md  shadow-xs '>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold'>LATENCY</Text>
+                <View className='flex-row gap-1 items-center  '>
+                  <Dot color="green" hw={"8"} />
+                  <Text className=' font-jetbrainsMono-medium  '>18</Text>
+                  <Text className=' font-jetbrainsMono-medium  '>ms</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>DOWN</Text>
+                <View className='flex-row justify-center items-center gap-1  '>
+                  <ArrowDown size={16} />
+                  <Text className=' font-jetbrainsMono-medium  '>184M</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>UP</Text>
+                <View className='flex-row gap-1  '>
+                  <ArrowUp size={16} />
+                  <Text className=' font-jetbrainsMono-medium  '>42.8M</Text>
+                </View>
+              </View>
+              <View className='justify-center items-center '>
+                <Text className='font-jetbrainsMono-semibold '>PROTOCOL</Text>
+                <Text className=' bg-surface-dim py-1 px-2 text-sm rounded-full '>WG ®️</Text>
+              </View>
             </View>
-          </View>
-          <View className='justify-center items-center '>
-            <Text className='font-jetbrainsMono-semibold '>DOWN</Text>
-            <View className='flex-row justify-center items-center gap-1  '>
-              <ArrowDown size={16} />
-              <Text className=' font-jetbrainsMono-medium  '>0.0M</Text>
-            </View>
-          </View>
-          <View className='justify-center items-center '>
-            <Text className='font-jetbrainsMono-semibold '>UP</Text>
-            <View className='flex-row gap-1  '>
-              <ArrowUp size={16} />
-              <Text className=' font-jetbrainsMono-medium  '>0.0M</Text>
-            </View>
-          </View>
-          <View className='justify-center items-center '>
-            <Text className='font-jetbrainsMono-semibold '>PROTOCOL</Text>
-            <Text className=' bg-surface-dim py-1 px-2 text-sm rounded-full '>STANDBY</Text>
-          </View>
-        </View>
+        }
 
         <View className='flex-row items-center'>
           <View className='bg-surface-dim rounded-full overflow-hidden justify-center items-center h-16 w-16 '>
@@ -102,15 +202,21 @@ const Connect = () => {
             </View>
           </View>
 
-          <Pressable className='bg-black rounded-full py-2 px-4 font-hanken-bold'>
+          {!connected ? <Pressable className='bg-black rounded-full py-2 px-4 font-hanken-bold'>
             <Text className='text-white'>Connect</Text>
           </Pressable>
+            :
+            <Pressable onPress={() => router.push("/(app)/(tabs)/server")} className='flex-row items-center bg-surface-dim rounded-full py-2 px-4 font-hanken-bold'>
+              <Text className=''>Change</Text>
+              <ChevronRight size={18} />
+            </Pressable>
+          }
         </View>
 
 
         <View className='flex-row justify-between mt-8 py-2'>
           <Text className='text-md font-hanken-semibold '>DEFENSE SUITE</Text>
-          <Text className='text-md text-c_primary font-hanken-semibold '>ARMED (OFFLINE)</Text>
+          <Text className='text-md text-c_primary font-hanken-semibold '>{!connected ? "ARMED (OFFLINE)" : "ALL SHIELD UP"}</Text>
         </View>
 
         <View className='gap-4 my-2'>

@@ -11,6 +11,11 @@ const Signin = () => {
     const AppIcon = require("@/assets/images/logo.png")
     const google = require('@/assets/images/google.png')
     const apple = require('@/assets/images/apple.png')
+
+
+    const login = () => {
+        router.replace("/(app)/(tabs)")
+    }
     return (
         <SafeAreaWrapper>
             <KeyboardAwareScrollView
@@ -100,7 +105,7 @@ const Signin = () => {
                         </View>
                     </View>
 
-                    <Pressable className='flex-row items-center justify-center gap-2 rounded-lg bg-black p-4 mt-4'>
+                    <Pressable onPress={login} className='flex-row items-center justify-center gap-2 rounded-lg bg-black p-4 mt-4'>
                         <Text className='text-base font-jetbrainsMono-semibold text-white'>Authenticate & Connect</Text>
                         <ArrowRight size={24} color={"#fff"} />
                     </Pressable>

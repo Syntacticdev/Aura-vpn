@@ -43,7 +43,7 @@ const Welcome = () => {
 
                 <View className='flex-row items-center gap-2 mt-4'>
                     <Text className='font-hanken'>Already have an account?</Text>
-                    <Pressable><Text className='underline font-hanken-bold'>Sign In</Text></Pressable>
+                    <Pressable onPress={() => router.push("/(public)/signin")}><Text className='underline font-hanken-bold'>Sign In</Text></Pressable>
                 </View>
 
                 <View className='flex-row items-center gap-2'>
