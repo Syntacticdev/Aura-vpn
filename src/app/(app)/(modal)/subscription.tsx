@@ -28,6 +28,12 @@ const subscription = () => {
         }
     ]
 
+    const handlePayment = () => {
+        // logic here
+        //redirect after successful payment
+        router.dismissTo("/(app)/(modal)/success")
+    }
+
     const { selectedBillingPlanType, updateSelectedBillingPlanTypeFn } = useBilling()
     return (
         <SafeAreaWrapper>
@@ -71,7 +77,7 @@ const subscription = () => {
                     <Text className='text-base font-hanken'>EXPRESS INSTANT AUTHORIZATION</Text>
 
                     <View className='my-3 flex-row items-center gap-2'>
-                        <Pressable className='flex-row items-center justify-center flex-1 min-w-0 p-4 bg-black rounded-lg gap-2'>
+                        <Pressable onPress={handlePayment} className='flex-row items-center justify-center flex-1 min-w-0 p-4 bg-black rounded-lg gap-2'>
                             <Text className='text-white text-2xl font-hanken'>Pay</Text>
                             <Image className='w-8 h-8' source={require("@/assets/images/apple.png")} />
                         </Pressable>

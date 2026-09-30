@@ -185,17 +185,17 @@ const Connect = () => {
             </View>
         }
 
-        <View className='flex-row items-center'>
+        <View className='flex-row items-center gap-3'>
           <View className='bg-surface-dim rounded-full overflow-hidden justify-center items-center h-16 w-16 '>
-            <EImage placeholder={{ blurhash }} contentFit='cover' style={{ width: '60%', height: '60%', borderRadius: 100 }} source={require("@/assets/images/flags/gm.svg")} />
+            <EImage placeholder={{ blurhash }} contentFit='cover' style={{ width: '80%', height: '80%', borderRadius: 100 }} source={require("@/assets/images/flags/gm.svg")} />
           </View>
 
           <View className='flex-1'>
-            <View className='flex-row items-center justify-center gap-2'>
-              <Text className='text-2xl font-hanken-bold'>Frankfurt #04</Text>
+            <View className='flex-row items-center  gap-2'>
+              <Text className='text-xl font-hanken-bold'>Frankfurt #04</Text>
               <Text className='bg-surface-dim p-1 rounded-md font-hanken-bold'>FASTEST</Text>
             </View>
-            <View className='flex-row items-center justify-center gap-2'>
+            <View className='flex-row items-center  gap-2'>
               <Text className='font-hanken-semibold  '>Optimal Server</Text>
               <View className=" bg-surface-variant w-1 h-1 rounded-sm " />
               <Text className='font-hanken-semibold'>18ms latency</Text>
