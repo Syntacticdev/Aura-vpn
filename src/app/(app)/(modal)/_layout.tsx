@@ -8,7 +8,15 @@ const ModalLayout = () => {
             screenOptions={{
                 headerShown: false
             }}
-        />
+
+        >
+            <Stack.Screen
+                options={{
+                    animation: "slide_from_bottom",
+                    presentation: "formSheet"
+                }}
+                name='subscription' />
+        </Stack>
     )
 }
 

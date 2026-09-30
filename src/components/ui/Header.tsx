@@ -1,5 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { router } from 'expo-router'
 
 const Header = () => {
     const logo = require("@/assets/images/logo.png")
@@ -14,9 +15,8 @@ const Header = () => {
                 <Text className='text-sm font-hanken-regular bg-black text-white font-jetbrainsMono-medium px-2 py-1 rounded-full'>Secure</Text>
             </View>
 
-            <Pressable>
+            <Pressable onPress={() => router.push("/(app)/(modal)/profile")}>
                 <View className='w-10 h-10 border border-2 border-muted rounded-full items-center justify-center overflow-hidden'>
-
                     <Image resizeMode='contain' source={user} className='w-10 h-10 ' />
                 </View>
             </Pressable>

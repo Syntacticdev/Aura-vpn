@@ -7,6 +7,7 @@ import React, { useEffect } from "react";
 import "@/global.css"
 import { StatusBar, View } from "react-native";
 import { KeyboardProvider } from "react-native-keyboard-controller";
+import { BillingProvider } from "@/context/BillingContext";
 
 
 export default function RootLayout() {
@@ -33,18 +34,20 @@ export default function RootLayout() {
   if (!loaded || error) return null
 
   return (
-    <KeyboardProvider>
-      <React.Fragment>
-        <StatusBar barStyle={"dark-content"} />
-        <Stack
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="(public)" />
-          <Stack.Screen name="(app)" />
-        </Stack>
-      </React.Fragment>
-    </KeyboardProvider>
+    <BillingProvider>
+      <KeyboardProvider>
+        <React.Fragment>
+          <StatusBar barStyle={"dark-content"} />
+          <Stack
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="(public)" />
+            <Stack.Screen name="(app)" />
+          </Stack>
+        </React.Fragment>
+      </KeyboardProvider>
+    </BillingProvider>
   );
 }
