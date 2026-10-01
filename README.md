@@ -31,7 +31,7 @@ The project includes a set of screen designs in the `designs/` folder. These are
   <img src="designs/server-screen.png" alt="Aura VPN server screen" width="200" />
   <img src="designs/billing-screen.png" alt="Aura VPN billing screen" width="200" />
   <img src="designs/billing-success-screen.png" alt="Aura VPN success screen" width="200" />
-  <img src="designs/signin-screen.png" alt="Aura VPN sign in screen" width="200" />
+  <img src="designs/signin-screen.png" alt="Aura VPN Sign in screen" width="200" />
 </p>
 
 <p align="center">
