@@ -1,0 +1,153 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDFFF9"/>
+      <stop offset="0.5" stop-color="#F3F6FF"/>
+      <stop offset="1" stop-color="#F8F6FF"/>
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#11998E"/>
+      <stop offset="1" stop-color="#38EF7D"/>
+    </linearGradient>
+    <linearGradient id="blueCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1B5BFF"/>
+      <stop offset="1" stop-color="#2CB7FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg)"/>
+
+  <circle cx="160" cy="120" r="102" fill="#D9F6EC"/>
+  <circle cx="1440" cy="820" r="140" fill="#E4E7FF"/>
+  <circle cx="1310" cy="170" r="90" fill="#E9FFF7"/>
+
+  <text x="80" y="90" fill="#0F172A" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Aura VPN</text>
+  <text x="80" y="126" fill="#475569" font-size="16" font-family="Segoe UI, Arial, sans-serif">privacy-first mobile product prototype</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="180" width="300" height="700" rx="40" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="110" y="215" width="260" height="640" rx="30" fill="#FFFFFF"/>
+    <circle cx="240" cy="245" r="22" fill="#EAFBF5"/>
+    <circle cx="240" cy="245" r="12" fill="url(#screenGlow)"/>
+    <text x="154" y="310" fill="#0F172A" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Privacy, Proven.</text>
+    <text x="146" y="340" fill="#475569" font-size="14" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" width="100">Zero-logs, RAM-only routing under sovereign Swiss jurisdiction.</text>
+
+    <rect x="140" y="376" width="200" height="34" rx="17" fill="#F1F5F9"/>
+    <circle cx="170" cy="393" r="6" fill="#19C37D"/>
+    <text x="186" y="398" fill="#0F172A" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="600">100% RAM Only</text>
+
+    <rect x="150" y="425" width="180" height="110" rx="28" fill="#0B1220"/>
+    <circle cx="208" cy="470" r="42" fill="#0F172A" stroke="#1A2B3D" stroke-width="6"/>
+    <path d="M208 438L245 475L208 512L171 475L208 438Z" fill="#FFFFFF" opacity="0.18"/>
+    <path d="M208 480L215 470L231 480L204 500L175 465L188 456L208 480Z" fill="#FFFFFF"/>
+    <text x="181" y="528" fill="#FFFFFF" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Get Started</text>
+
+    <rect x="140" y="555" width="200" height="22" rx="11" fill="#F8FAFC"/>
+    <text x="176" y="570" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif">Already have an account?</text>
+    <text x="274" y="570" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Sign In</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="440" y="180" width="300" height="700" rx="40" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="460" y="215" width="260" height="640" rx="30" fill="#F5F7FF"/>
+    <rect x="490" y="242" width="200" height="38" rx="19" fill="#EAF3FF"/>
+    <circle cx="512" cy="261" r="8" fill="#4ADE80"/>
+    <text x="528" y="268" fill="#14213D" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">ENCRYPTED TUNNEL</text>
+
+    <text x="522" y="340" fill="#0F172A" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Not Connected</text>
+    <text x="520" y="367" fill="#475569" font-size="12" font-family="Segoe UI, Arial, sans-serif">Your actual IP and traffic are visible to your ISP</text>
+
+    <rect x="500" y="392" width="180" height="54" rx="27" fill="#EFF2F9"/>
+    <rect x="516" y="410" width="60" height="18" rx="9" fill="#E3E8F0"/>
+    <text x="530" y="423" fill="#475569" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">EXPOSED</text>
+    <text x="586" y="423" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">84.115.18.24</text>
+
+    <circle cx="620" cy="480" r="92" fill="#FFFFFF"/>
+    <circle cx="620" cy="480" r="70" fill="#EEF2FF"/>
+    <circle cx="620" cy="480" r="48" fill="#0F172A"/>
+    <path d="M600 480L618 498L646 470" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="564" y="585" fill="#0F172A" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">QUICK CONNECT</text>
+
+    <rect x="500" y="618" width="180" height="48" rx="24" fill="#EFF2F9"/>
+    <circle cx="524" cy="642" r="5" fill="#2DD4BF"/>
+    <text x="538" y="647" fill="#0F172A" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">LAST SESSION:</text>
+    <text x="622" y="647" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif">42m ago</text>
+
+    <rect x="500" y="686" width="180" height="62" rx="16" fill="#FFFFFF"/>
+    <text x="518" y="708" fill="#475569" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">LATENCY</text>
+    <text x="518" y="732" fill="#0F172A" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">-- ms</text>
+    <text x="598" y="708" fill="#475569" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">DOWN</text>
+    <text x="594" y="732" fill="#0F172A" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">0.0M</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="790" y="180" width="300" height="700" rx="40" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="810" y="215" width="260" height="640" rx="30" fill="#FFFFFF"/>
+    <text x="830" y="260" fill="#0F172A" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">TELEMETRY DECK</text>
+    <text x="830" y="292" fill="#0F172A" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Network</text>
+    <text x="830" y="322" fill="#0F172A" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Diagnostics</text>
+
+    <rect x="1008" y="246" width="42" height="22" rx="11" fill="#E8FDF1"/>
+    <circle cx="1022" cy="257" r="5" fill="#2ED97A"/>
+    <text x="1034" y="262" fill="#0F172A" font-size="9" font-family="Segoe UI, Arial, sans-serif" font-weight="700">LIVE</text>
+
+    <rect x="830" y="358" width="220" height="42" rx="21" fill="#F1F5F9"/>
+    <rect x="842" y="370" width="66" height="18" rx="9" fill="#0F172A"/>
+    <text x="850" y="383" fill="#FFFFFF" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">SESSION</text>
+    <rect x="916" y="370" width="66" height="18" rx="9" fill="#E2E8F0"/>
+    <text x="930" y="383" fill="#0F172A" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">TODAY</text>
+
+    <text x="832" y="450" fill="#475569" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">CURRENT SPEED</text>
+    <text x="832" y="492" fill="#0F172A" font-size="38" font-family="Segoe UI, Arial, sans-serif" font-weight="700">126.7</text>
+    <text x="952" y="492" fill="#2563EB" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Mbps</text>
+
+    <rect x="832" y="520" width="218" height="66" rx="16" fill="#F1F5F9"/>
+    <text x="854" y="548" fill="#475569" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">RECV</text>
+    <text x="922" y="548" fill="#0F172A" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">14.2</text>
+    <text x="970" y="548" fill="#475569" font-size="13" font-family="Segoe UI, Arial, sans-serif">GB</text>
+    <rect x="1032" y="530" width="1" height="36" fill="#CBD5E1"/>
+    <text x="1048" y="548" fill="#475569" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">SENT</text>
+    <text x="1098" y="548" fill="#0F172A" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">2.8</text>
+    <text x="1136" y="548" fill="#475569" font-size="13" font-family="Segoe UI, Arial, sans-serif">GB</text>
+
+    <rect x="832" y="610" width="218" height="70" rx="18" fill="#EAFBF5"/>
+    <circle cx="856" cy="645" r="18" fill="#D4FADC"/>
+    <path d="M848 645L854 651L865 638" stroke="#0F172A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="884" y="641" fill="#0F172A" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700">DNS Leaked</text>
+    <text x="884" y="660" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif">Prevention</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1140" y="180" width="300" height="700" rx="40" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="1160" y="215" width="260" height="640" rx="30" fill="#FFFFFF"/>
+
+    <text x="1188" y="265" fill="#0F172A" font-size="12" font-family="Segoe UI, Arial, sans-serif" font-weight="700">AURA TIER SELECTOR</text>
+    <text x="1186" y="312" fill="#0F172A" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Elevate Your</text>
+    <text x="1186" y="344" fill="#0F172A" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Privacy Armor</text>
+
+    <rect x="1186" y="370" width="210" height="38" rx="19" fill="#F1F5F9"/>
+    <rect x="1194" y="378" width="96" height="22" rx="11" fill="#0F172A"/>
+    <text x="1222" y="393" fill="#FFFFFF" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">ANNUALLY</text>
+    <text x="1312" y="393" fill="#0F172A" font-size="10" font-family="Segoe UI, Arial, sans-serif" font-weight="700">MONTHLY</text>
+
+    <rect x="1186" y="434" width="210" height="100" rx="18" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="1204" y="460" fill="#0F172A" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Aura Pro Unlimited</text>
+    <text x="1204" y="490" fill="#475569" font-size="11" font-family="Segoe UI, Arial, sans-serif">Complete zero-compromise cryptographic shield</text>
+    <text x="1204" y="514" fill="#0F172A" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">$3.99</text>
+    <text x="1268" y="514" fill="#475569" font-size="11" font-family="Segoe UI, Arial, sans-serif">/ month</text>
+
+    <rect x="1186" y="548" width="210" height="132" rx="18" fill="#0F172A"/>
+    <text x="1204" y="578" fill="#FFFFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Express Instant</text>
+    <text x="1204" y="600" fill="#FFFFFF" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Authorization</text>
+    <rect x="1204" y="618" width="86" height="36" rx="12" fill="#FFFFFF"/>
+    <text x="1232" y="641" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Pay</text>
+    <rect x="1298" y="618" width="86" height="36" rx="12" fill="#FFFFFF"/>
+    <text x="1325" y="641" fill="#0F172A" font-size="11" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Pay</text>
+
+    <rect x="1186" y="692" width="210" height="52" rx="14" fill="#0F172A"/>
+    <text x="1210" y="724" fill="#FFFFFF" font-size="13" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Activate 30-Day Trial</text>
+  </g>
+</svg>

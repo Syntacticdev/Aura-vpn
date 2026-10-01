@@ -16,6 +16,33 @@ This version adds a more complete end-to-end mock experience across the main pro
 - Billing and plan selection flows powered by a local billing context and subscription data model.
 - Supporting UI components for headers, cards, badges, and network status indicators.
 
+## Design preview
+
+The project includes a set of screen designs in the `designs/` folder. These are the reference visuals for the product before launch, and they show the actual intended look and flow of the app.
+
+<p align="center">
+  <img src="designs/welcome-screen.png" alt="Aura VPN welcome screen" width="200" />
+  <img src="designs/connect-screen.png" alt="Aura VPN connect screen" width="200" />
+  <img src="designs/analytics-screen.png" alt="Aura VPN analytics screen" width="200" />
+  <img src="designs/settings-screen.png" alt="Aura VPN settings screen" width="200" />
+</p>
+
+<p align="center">
+  <img src="designs/server-screen.png" alt="Aura VPN server screen" width="200" />
+  <img src="designs/billing-screen.png" alt="Aura VPN billing screen" width="200" />
+  <img src="designs/billing-success-screen.png" alt="Aura VPN success screen" width="200" />
+  <img src="designs/signin-screen.png" alt="Aura VPN sign in screen" width="200" />
+</p>
+
+<p align="center">
+  <img src="designs/signup-screen.png" alt="Aura VPN sign up screen" width="200" />
+  <img src="designs/user-profile-screen.png" alt="Aura VPN profile screen" width="200" />
+  <img src="designs/billing-2-screen.png" alt="Aura VPN alternate billing screen" width="200" />
+  <img src="designs/disconnect-screen.png" alt="Aura VPN disconnect screen" width="200" />
+</p>
+
+These design assets are the best way to understand the intended app experience quickly without needing to load the app.
+
 ## App experience
 
 ### Public onboarding flow
